@@ -19,7 +19,6 @@ prefix = configData["Prefix"]
 bot = commands.Bot(command_prefix=prefix)
 bot.remove_command('help')
 
-
 @bot.event
 async def on_ready():
     with open('config.json') as config_file:
@@ -27,6 +26,11 @@ async def on_ready():
 
     print ("Bot main core is ready.")
 
+
+@bot.command()
+async def email(ctx):
+   await ctx.invoke(self.bot.get_command('email_alert'))
+   
 @bot.command()
 @commands.has_role('Administrator')
 async def load(ctx, extension):
