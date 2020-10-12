@@ -29,8 +29,8 @@ async def on_ready():
 
 @bot.command()
 async def email(ctx):
-   await ctx.invoke(self.bot.get_command('email_alert'))
-   
+   await ctx.invoke(bot.get_command('email_alert'))
+
 @bot.command()
 @commands.has_role('Administrator')
 async def load(ctx, extension):
