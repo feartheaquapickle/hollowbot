@@ -10,7 +10,9 @@ class admin(commands.Cog):
     async def on_ready(self):
         print('Admin panel ready.')
 
-#clears messages
+# Clears amount of messages entered by user !clear 5 will clear 5 messages
+# including the issuing command.
+
     @commands.command()
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount=5):

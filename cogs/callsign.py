@@ -13,6 +13,8 @@ class callsign(commands.Cog):
         print('Callsign Generator loaded.')
 
 # Generates a random callsign in the format of NL-NN.
+# Created for use with FivePD/FiveM - may be removed later.
+
     @commands.command()
     async def c(self, ctx):
         await ctx.message.delete()

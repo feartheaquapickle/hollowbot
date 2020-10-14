@@ -22,13 +22,6 @@ class talk(commands.Cog):
 
             return
 
-        if 'fuck you' in message.content.lower():
-            response = "Don't tempt me with a good time."
-            await message.channel.send(f'```{(response)}```')
-            print('--fuck you detected.')
-
-            return
-
 # Completes ping command.
     @commands.command(brief=" | Use to check your ping rate.")
     async def ping(self, ctx):

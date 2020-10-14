@@ -12,10 +12,12 @@ class dice(commands.Cog):
     async def on_ready(self):
         print('Dice function loaded.')
 
+# Simple d6 dice function
+
     @commands.command()
     async def roll(self,ctx):
 
-        dice = random.randint(1,10)
+        dice = random.randint(1,6)
 
         await ctx.send(f'Result: {(dice)}')
 

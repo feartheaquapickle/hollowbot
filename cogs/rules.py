@@ -72,16 +72,30 @@ class rules(commands.Cog):
 
         embed=discord.Embed(title="Roles & Positions", description="Pick your poison!", color=0xfd3f58)
         embed.set_author(name="Hollowlake Job Center", icon_url="https://i.imgur.com/8l0UOzc.png")
-        embed.add_field(name="🔵 | Los Santos Police Department", value="The LSPD has jurisdiction is the city itself, the port, as well as the suburbs along the county line. They are commonly seen on mutual-aid calls with county.", inline=False)
-        embed.add_field(name="🟢 | Tri-County Sheriff's Office", value="The TCSO has jurisdiction over the whole of San Andreas as they are a condensed office of all three Sheriff departments. Their main focus is in the country but can be found on patrol in the city.", inline=False)
-        embed.add_field(name="🔷 | San Andreas State Troopers", value="The main focus of the SAST is the highways and unpatrolled roads in the mountains but their jurisdiction is over the whole of San Andreas.", inline=False)
-        embed.add_field(name="🟦 | LEO", value="Don't know what department you want yet? No worries. LEO is a temporary catch-all for those who want to try everything before settling in.", inline=False)
-        embed.add_field(name="🔴 | San Andreas Fire & EMS", value="Law Enforcement not your style? Respond to calls for service as a firefighter! Currently this role is pretty limited to responding to traffic accidents but could evolve in the future.", inline=False)
-        embed.add_field(name="⚪ | Civilian", value="Your average citizen. Not sure if you really want to do LE work? Citizen is for you! Play the game as a standard person, you can even interact with the officers!", inline=False)
+        embed.add_field(name="Los Santos Police Department", value="The LSPD has jurisdiction is the city itself, the port, as well as the suburbs along the county line. They are commonly seen on mutual-aid calls with county.", inline=False)
+        embed.add_field(name="Tri-County Sheriff's Office", value="The TCSO has jurisdiction over the whole of San Andreas as they are a condensed office of all three Sheriff departments. Their main focus is in the country but can be found on patrol in the city.", inline=False)
+        embed.add_field(name="San Andreas State Troopers", value="The main focus of the SAST is the highways and unpatrolled roads in the mountains but their jurisdiction is over the whole of San Andreas.", inline=False)
+        embed.add_field(name="LEO", value="Don't know what department you want yet? No worries. LEO is a temporary catch-all for those who want to try everything before settling in.", inline=False)
+        embed.add_field(name="San Andreas Fire & EMS", value="Law Enforcement not your style? Respond to calls for service as a firefighter! Currently this role is pretty limited to responding to traffic accidents but could evolve in the future.", inline=False)
+        embed.add_field(name="Civilian", value="Your average citizen. Not sure if you really want to do LE work? Citizen is for you! Play the game as a standard person, you can even interact with the officers!", inline=False)
         embed.add_field(name="Claim Your Role!", value=" So, what will it be? Reply below and a staff member will assign you a role!", inline=False)
 
         await ctx.send(embed=embed)
 
+
+    @commands.command(pass_context=True)
+    @commands.has_role('Administrator')
+    async def role2(self, ctx):
+        await ctx.message.delete()
+
+        author = ctx.message.author
+
+        embed=discord.Embed(title="Discord Roles!", description="", color=0xfd3f58)
+        embed.add_field(name="[🔴] Developer", value="Make stuff? Developer is for you.", inline=False)
+        embed.add_field(name="[🟠] Friend", value="Just here to chill? This is yours!", inline=False)
+        embed.add_field(name="[⚫] FivePD", value="Play on my FivePD Server? Pick this one!", inline=False)
+
+        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(rules(bot))
